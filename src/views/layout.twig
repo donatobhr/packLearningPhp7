@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        div {
+            border: solid 1px;
+            display: flex;
+            justify-content: center;
+        }
+
+        div a {
+            margin: 10px 20px;
+            text-decoration: none;
+            color: black;
+        }
+
+        div a:hover {
+            color: blue;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="/site/books">Books</a>
+        <a href="/site/sales">My Sales</a>
+        <a href="/site/my-books">My Books</a>
+    </div>
+    <form action="/site/books/search" method="GET">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author">
+        <input type="submit" value="Search">
+    </form>
+
+    {% block content %} {% endblock %}
+</body>
+</html>

@@ -31,13 +31,8 @@ class BookControllerTest extends ControllerTestCase {
         $this->di->set('BookModel', $bookModel);
 
         $response = '';
-        $template = $this->mock("\Twig\Template");
-        $template
-            ->expects($this->once())
-            ->method('render')
-            ->with(['errorMessage' => 'Book not found.'])
-            ->willReturn($response);
-        
+        $template = $this->mock("\Twig\TemplateWrapper");
+
         $this->di->get('Twig_Enviroment')
             ->expects($this->once())
             ->method('load')
@@ -45,7 +40,7 @@ class BookControllerTest extends ControllerTestCase {
             ->willReturn($template);
 
         $result = $this->getController()->borrow(123);
-
+        
         $this->assertSame($result, $response, 'Response object is not the expected one.');
         
     }

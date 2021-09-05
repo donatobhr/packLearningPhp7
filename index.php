@@ -11,7 +11,6 @@ use Monolog\Logger;
 
 
 require_once __DIR__ . '/vendor/autoload.php';
-
 $config = new Config();
 
 $dbConfig = $config->get('db');

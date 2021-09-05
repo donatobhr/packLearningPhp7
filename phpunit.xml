@@ -13,8 +13,7 @@
 >
     <testsuites>
         <testsuite name="Bookstore Test Suite">
-            <file>./tests/MathTest.php</file>
-            <exclude>./tests/Controllers/BookControllerTest.php</exclude>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
 

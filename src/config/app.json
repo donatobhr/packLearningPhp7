@@ -1,7 +1,12 @@
 {
     "db": {
-      "user": "root",
+      "user": "donatobhr",
       "password": "root"
     },
-    "log": "./bookstore.log"
+    "log": "./bookstore.log",
+    "api": {
+      "host": "book4.p.rapidapi.com",
+      "key":  "b851556c5fmshf35f0447259d5c3p116f3ejsn263b3f0b233b",
+      "baseUri" : "https://jsonplaceholder.typicode.com/"
+    }
   }

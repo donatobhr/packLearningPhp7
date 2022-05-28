@@ -1,0 +1,57 @@
+<?php declare(strict_types=1);
+
+namespace Bookstore\Domain;
+
+class Sale2 {
+    // private $id;
+    // private $customer_id;
+    // private $books = array();
+    // private $date;
+
+
+    // public function setCutomerId(int $customerId) {
+    //     $this->customer_id = $customerId;
+    // }
+
+    // public function getId(): int {
+    //     return (int) $this->id;
+    // }
+
+    // public function getCustomerId(): int {
+    //     return (int) $this->customer_id;
+    // }
+
+    // public function getBooks(): array {
+    //     return $this->books;
+    // }
+
+    // public function getDate(): string {
+    //     return $this->date;
+    // }
+
+    // public function addBook(int $bookId, int $amount = 1) {
+    //     if(!isset($this->books[$bookId])) {
+    //         $this->books[$bookId] = 0;
+    //     }
+
+    //     $this->books[$bookId] += $amount;
+    // }
+
+    // public function setBooks(array $books) {
+    //     $this->books = $books;
+    // }
+
+    private $books = [];
+
+    public function getBooks(): array {
+        return $this->books;
+    }
+
+    public function addBook(int $bookId, int $amount = 1) {
+        if(!isset($this->books[$bookId])) {
+            $this->books[$bookId] = 0;
+        }
+
+        $this->books[$bookId] += $amount;
+    }
+}

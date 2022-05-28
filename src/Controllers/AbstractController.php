@@ -22,6 +22,7 @@ abstract class AbstractController {
         $this->log = $this->di->get('Logger');
         $this->view = $this->di->get('Twig_Enviroment');
         $this->customerId = $request->getCookies()->get('id');
+        $this->httpClient = $this->di->get('httpClient');
     }
 
     protected function render(string $template, $params): string {

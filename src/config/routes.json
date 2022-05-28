@@ -63,5 +63,10 @@
         "controller": "Book",
         "method": "getByUser",
         "login": true
+    },
+    "site/onlinebooks" : {
+        "controller": "OnlineBook",
+        "method": "getAll",
+        "login": false
     }
 }

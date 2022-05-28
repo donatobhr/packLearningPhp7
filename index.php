@@ -8,7 +8,7 @@ use Bookstore\Models\BookModel;
 use Bookstore\Utils\DependencyInjector;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
-
+use GuzzleHttp\Client;
 
 require_once __DIR__ . '/vendor/autoload.php';
 $config = new Config();
@@ -23,12 +23,14 @@ $log = new Logger('bookstore');
 $logFile = $config->get('log');
 $log->pushHandler(new StreamHandler($logFile, Logger::DEBUG));
 
+$apiConfig = $config->get('api');
 $di = new DependencyInjector();
 $di->set('PDO', $db);
 $di->set('Utils\Config', $config);
 $di->set('Twig_Enviroment', $view);
 $di->set('Logger', $log);
 $di->set('BookModel', new BookModel($di->get('PDO')));
+$di->set('httpClient', new Client(['base_uri' => $apiConfig['baseUri']]));
 
 $router = new Router($di);
 $response = $router->route(new Request());

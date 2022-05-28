@@ -13,7 +13,9 @@
 >
     <testsuites>
         <testsuite name="Bookstore Test Suite">
-            <directory>./tests/</directory>
+            <directory>./src/tests/</directory>
+            <exclude>./src/tests/Controllers/BookControllerTest.php</exclude>
+            <exclude>./src/tests/Models/BookModelTest.php</exclude>
         </testsuite>
     </testsuites>
 
